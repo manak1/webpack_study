@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -6,14 +7,14 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "main.js",
   },
-  module: {
+module: {
     rules: [
       {
-        //cssファイル検知に使用 loader端から上の順に適応される。
+        //cssファイル検知に使用 loader下から上の順に適応される。
         test: /\.css/,
         use: [
           {
-            loader: "style-loader",
+            loader: MiniCSSExtractPlugin.loader,
           },
           {
             loader: "css-loader",
@@ -22,4 +23,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+      new MiniCSSExtractPlugin(),
+  ]
 };
