@@ -3,6 +3,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
       //resolveメソッドで絶対パスを取得している。
-      path:path.resolve(__dirname,"./dist")
+      path:path.resolve(__dirname,"./dist"),
+      filename:'main.js'
   }
 }

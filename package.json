@@ -11,6 +11,7 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
+    "css-loader": "^3.4.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }
