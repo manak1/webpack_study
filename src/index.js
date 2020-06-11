@@ -1,3 +1,3 @@
 import my from './modules/my.js'
-conosole.log("webpack");
+console.log("webpack");
 my()
