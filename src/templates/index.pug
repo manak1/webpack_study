@@ -1,11 +1,11 @@
-doctype html
-html(lang='ja')
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width,initial-scale='1.0")
-        title Template html
-    body
-        include _menu.pug
-        h1 Hello world!
-        img(src="../assets/images/logo.png")
-        img(src="../assets/images/thumbnail.jpg")
+extends _layout.pug
+
+
+block locals
+    - var title = 'hello index'
+
+block content
+    h1 Hello world!
+    img(src="../assets/images/logo.png")
+    img(src="../assets/images/thumbnail.jpg")
+    
