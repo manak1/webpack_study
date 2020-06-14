@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //distから不要なファイルを削除する。
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
+  mode: "development",
   devtool: "source-map",
   entry: "./src/js/index.js",
   output: {
