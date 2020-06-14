@@ -1,2 +1,1 @@
-import '../css/style.css'
-console.log("webpack");
+import '../css/style.scss'

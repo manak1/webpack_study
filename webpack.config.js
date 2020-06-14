@@ -16,7 +16,7 @@ module.exports = {
     rules: [
       {
         //cssファイル検知に使用 loader下から上の順に適応される。
-        test: /\.css/,
+        test: /\.(css|sass|scss)/,
         use: [
           {
             loader: MiniCSSExtractPlugin.loader,
@@ -24,6 +24,9 @@ module.exports = {
           {
             loader: "css-loader",
           },
+          {
+            loader:'sass-loader'
+          }
         ],
       },
       {
