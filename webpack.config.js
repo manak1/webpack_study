@@ -25,8 +25,8 @@ module.exports = {
             loader: "css-loader",
           },
           {
-            loader:'sass-loader'
-          }
+            loader: "sass-loader",
+          },
         ],
       },
       {
@@ -50,8 +50,20 @@ module.exports = {
           {
             loader: "pug-html-loader",
             options: {
-              pretty:true
-            }
+              pretty: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.js/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
           },
         ],
       },
@@ -63,15 +75,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
-      filename:"index.html"
+      filename: "index.html",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/access.pug",
-      filename:"access.html"
+      filename: "access.html",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/members/taro.pug",
-      filename:"members/taro.html"
+      filename: "members/taro.html",
     }),
     new CleanWebpackPlugin(),
   ],
