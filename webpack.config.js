@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //distから不要なファイルを削除する。
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
+  devtool: "source-map",
   entry: "./src/js/index.js",
   output: {
     //resolveメソッドで絶対パスを取得している。
@@ -23,6 +24,9 @@ module.exports = {
           },
           {
             loader: "css-loader",
+            options: {
+              sourceMap: false,
+            },
           },
           {
             loader: "sass-loader",
@@ -62,7 +66,9 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              presets: [["@babel/preset-env",{'targets':'> 0.25%, not dead'}]],
+              presets: [
+                ["@babel/preset-env", { targets: "> 0.25%, not dead" }],
+              ],
             },
           },
         ],
